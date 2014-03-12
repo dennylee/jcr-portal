@@ -1,0 +1,18 @@
+----------------------------------------------------------------
+2014-03-10 05:46:41.690 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0144-aa87-5a93-000021b17090
+on database directory /Users/dlee/Documents/Development/Tools/CQ5/crx-quickstart/version/db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2014-03-10 05:46:45.383 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 888c4022-0144-aa87-5a93-000021b17090
+on database directory /Users/dlee/Documents/Development/Tools/CQ5/crx-quickstart/workspaces/default/db  
+
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+2014-03-10 05:46:49.428 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance 6965c036-0144-aa87-5a93-000021b17090
+on database directory /Users/dlee/Documents/Development/Tools/CQ5/crx-quickstart/workspaces/security/db  
+
+Database Class Loader started - derby.database.classpath=''
