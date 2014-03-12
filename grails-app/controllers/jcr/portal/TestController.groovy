@@ -1,6 +1,7 @@
 package jcr.portal
 
 import com.pojo3.Image
+import com.pojo3.LandingText
 import com.pojo3.Table
 import org.apache.jackrabbit.ocm.manager.ObjectContentManager
 import org.apache.jackrabbit.ocm.manager.impl.ObjectContentManagerImpl
@@ -20,7 +21,7 @@ class TestController {
 
 
 //            String host = "http://localhost:4502/crx/server"
-              String host = "bur2-d1036236.eac.ad.ea.com:4502"
+              String host = "http://bur2-d1036236.eac.ad.ea.com:4502/crx/server"
             repository = JcrUtils.getRepository(host);
 //        } catch (Exception e) {
 //            System.out.println(e.getMessage())
@@ -37,12 +38,15 @@ class TestController {
         List<Class> classes = new ArrayList<Class>();
         classes.add(Image.class); // Call this method for each persistent class
         classes.add(Table.class)
+        classes.add(LandingText.class)
 
         Mapper mapper = new AnnotationMapperImpl(classes);
         ObjectContentManager ocm =  new ObjectContentManagerImpl(session, mapper);
 
 
-        Object o = ocm.getObject('/content/geometrixx/en/products/triangle/features/jcr:content/par/image')
+//        Object o = ocm.getObject('/content/geometrixx/en/products/triangle/features/jcr:content/par/image')
+        Object o = ocm.getObject('/content/inquisition-dragonage/en_US/usp/Fight_your_Way/jcr:content')
+
 
         System.out.println("ta da")
 //        listChildren( "", session.getRootNode().getNode('content/geometrixx/en/products/triangle/features') );
