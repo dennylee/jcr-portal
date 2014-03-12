@@ -3,6 +3,7 @@ package jcr.portal
 import com.pojo3.Image
 import com.pojo3.LandingText
 import com.pojo3.Table
+import com.pojo3.UspPage
 import org.apache.jackrabbit.ocm.manager.ObjectContentManager
 import org.apache.jackrabbit.ocm.manager.impl.ObjectContentManagerImpl
 import org.apache.jackrabbit.ocm.mapper.Mapper
@@ -30,6 +31,17 @@ class TestController {
         //Workspace Login
         SimpleCredentials creds = new SimpleCredentials("admin", "admin".toCharArray());
         Session session = repository.login(creds, "crx.default");
+
+
+        try {
+
+            session.getWorkspace().getNamespaceRegistry().registerNamespace("ocm",
+                    "http://jackrabbit.apache.org/ocm");
+        } catch (NamespaceException nsce) {
+            System.out.println(nsce.getMessage());
+        }
+
+
         //List Children
         System.out.println("Workspace: " + session.getWorkspace().getName() + "\n");
 
@@ -39,13 +51,14 @@ class TestController {
         classes.add(Image.class); // Call this method for each persistent class
         classes.add(Table.class)
         classes.add(LandingText.class)
+        classes.add(UspPage.class)
 
         Mapper mapper = new AnnotationMapperImpl(classes);
         ObjectContentManager ocm =  new ObjectContentManagerImpl(session, mapper);
 
 
 //        Object o = ocm.getObject('/content/geometrixx/en/products/triangle/features/jcr:content/par/image')
-        Object o = ocm.getObject('/content/inquisition-dragonage/en_US/usp/Fight_your_Way/jcr:content')
+        Object o = ocm.getObject('/content/inquisition-dragonage/en_US/usp/Fight_Your_Way/jcr:content')
 
 
         System.out.println("ta da")

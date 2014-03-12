@@ -1,9 +1,10 @@
 package com.pojo3
 
+import org.apache.jackrabbit.JcrConstants
 import org.apache.jackrabbit.ocm.mapper.impl.annotation.Field
 import org.apache.jackrabbit.ocm.mapper.impl.annotation.Node
 
-@Node
+@Node(jcrType = "nt:unstructured", jcrMixinTypes = JcrConstants.JCR_CONTENT)
 class LandingText {
     @Field(path=true)
     def path
